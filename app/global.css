@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl font-bold mb-4;
+  }
+}
+
+@layer components {
+  .offer-card {
+    @apply w-full h-48 rounded-xl shadow-lg p-4 overflow-hidden;
+  }
+}
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+}
