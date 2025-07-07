@@ -1,7 +1,7 @@
 import { offers } from "@/constants";
 import cn from "clsx";
 import { Fragment } from "react";
-import { FlatList, ImageBackground, Pressable, Text, View } from "react-native";
+import { FlatList, Image, Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
@@ -9,7 +9,7 @@ export default function Index() {
     <SafeAreaView>
       <FlatList
         data={offers}
-        renderItem={({ item }) => (
+        renderItem={({ item, index }) => (
           <View>
             <Pressable
               className={cn("offer-card")}
@@ -19,15 +19,27 @@ export default function Index() {
               android_ripple={{ color: "#fffff22" }}
             >
               <Fragment>
-                <ImageBackground
-                  source={item.image}
-                  resizeMode="contain"
-                  imageStyle={{ flex: 1, justifyContent: "flex-end" }}
+                <View
+                  className={cn(
+                    "w-full h-full flex",
+                    (index + 1) % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                  )}
                 >
-                  <View className="h-full w-1/2">
-                    <Text>{item.title}</Text>
+                  <View className="w-1/2">
+                    <Image
+                      source={item.image}
+                      resizeMode="cover"
+                      className="h-full w-full"
+                    />
                   </View>
-                </ImageBackground>
+                  <View className="w-1/2 h-40 flex justify-center items-start px-4 gap-2">
+                    <Text className="h1">{item.title}</Text>
+                    <Image
+                      source={require("../assets/images/cta.png")}
+                      className="w-10 h-5"
+                    />
+                  </View>
+                </View>
               </Fragment>
             </Pressable>
           </View>
