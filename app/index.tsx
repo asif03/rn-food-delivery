@@ -1,12 +1,19 @@
 import { offers } from "@/constants";
 import cn from "clsx";
 import { Fragment } from "react";
-import { FlatList, Image, Pressable, Text, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  Pressable,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
   return (
-    <SafeAreaView>
+    <SafeAreaView className="flex-1 bg-white">
       <FlatList
         data={offers}
         renderItem={({ item, index }) => (
@@ -46,6 +53,25 @@ export default function Index() {
         )}
         keyExtractor={(item) => item.id}
         contentContainerClassName="px-5 flex flex-col gap-4"
+        ListHeaderComponent={() => (
+          <View className="flex flex-row justify-between items-center px-5 pt-3">
+            <View>
+              <Text className="text-primary text-xs font-bold uppercase">
+                Deliver TO
+              </Text>
+              <TouchableOpacity className="flex flex-row justify-center items-center gap-x-1">
+                <Text className="text-primary text-lg font-bold">New York</Text>
+                <Image
+                  source={require("../assets/icons/arrow-down.png")}
+                  className="w-3 h-2"
+                />
+              </TouchableOpacity>
+            </View>
+            <Text className="text-primary text-xs font-bold uppercase">
+              Cart
+            </Text>
+          </View>
+        )}
       />
     </SafeAreaView>
   );
