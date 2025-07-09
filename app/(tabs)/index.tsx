@@ -1,3 +1,4 @@
+import CartButton from "@/components/CartButton";
 import { offers } from "@/constants";
 import cn from "clsx";
 import { Fragment } from "react";
@@ -42,7 +43,7 @@ export default function Index() {
                   <View className="w-1/2 h-40 flex justify-center items-start px-4 gap-2">
                     <Text className="h1">{item.title}</Text>
                     <Image
-                      source={require("../assets/images/cta.png")}
+                      source={require("../../assets/images/cta.png")}
                       className="w-10 h-5"
                     />
                   </View>
@@ -62,14 +63,12 @@ export default function Index() {
               <TouchableOpacity className="flex flex-row justify-center items-center gap-x-1">
                 <Text className="text-primary text-lg font-bold">New York</Text>
                 <Image
-                  source={require("../assets/icons/arrow-down.png")}
+                  source={require("../../assets/icons/arrow-down.png")}
                   className="w-3 h-2"
                 />
               </TouchableOpacity>
             </View>
-            <Text className="text-primary text-xs font-bold uppercase">
-              Cart
-            </Text>
+            <CartButton />
           </View>
         )}
       />

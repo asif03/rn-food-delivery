@@ -6,6 +6,14 @@
   .offer-card {
     @apply w-full h-48 rounded-xl shadow-lg overflow-hidden;
   }
+
+  .cart-btn {
+    @apply w-10 h-10 rounded-full bg-black flex items-center justify-center;
+  }
+
+  .cart-badge {
+    @apply absolute -top-1 -right-1 bg-primary rounded-full w-5 h-5 flex items-center justify-center;
+  }
 }
 @layer utilities {
   .h1 {

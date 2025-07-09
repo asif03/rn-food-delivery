@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#FE8C00",
+        black: "#181C2E",
       },
       fontFamily: {
         quicksand: ["Quicksand-Regular", "sans-serif"],
