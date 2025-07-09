@@ -7,7 +7,7 @@ export default function TabLayout() {
   if (!isAuthnticated) return <Redirect href="/sign-in" />;
 
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: "blue" }}>
+    <Tabs screenOptions={{ tabBarActiveTintColor: "#FE8C00" }}>
       <Tabs.Screen
         name="index"
         options={{
