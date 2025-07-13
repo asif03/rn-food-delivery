@@ -14,6 +14,10 @@
   .cart-badge {
     @apply absolute -top-1 -right-1 bg-primary rounded-full w-5 h-5 flex items-center justify-center;
   }
+
+  .label {
+    @apply font-quicksand text-black-100 font-medium text-base;
+  }
 }
 @layer utilities {
   .h1 {
