@@ -6,3 +6,12 @@ interface ICustomInputProps {
   secureTextEntry?: boolean;
   keyboardType?: "default" | "email-address" | "numeric" | "phone-pad";
 }
+
+interface ICustomButtonProps {
+  onPress?: () => void;
+  title?: string;
+  style?: string;
+  leftIcon?: React.ReactNode;
+  textStyle?: string;
+  isLoading?: boolean;
+}

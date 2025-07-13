@@ -18,6 +18,10 @@
   .label {
     @apply font-quicksand text-black-100 font-medium text-base;
   }
+
+  .custom-btn {
+    @apply bg-primary rounded-full p-3 w-full flex flex-row justify-center;
+  }
 }
 @layer utilities {
   .h1 {
